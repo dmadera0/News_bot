@@ -3,11 +3,7 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
-import os
-
-API_KEY = os.getenv('NEWS_API_KEY', '3965fa071bd045479746bc619c056e5d')
-if not API_KEY:
-    raise ValueError("No API key found. Please set the 'NEWS_API_KEY' environment variable.")
+API_KEY = '3965fa071bd045479746bc619c056e5d'
 
 def get_news(query):
     url = f'https://newsapi.org/v2/everything?q={query}&apiKey={API_KEY}'
@@ -26,3 +22,4 @@ def news():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
