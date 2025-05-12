@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Welcome to News Bot!</h1>
+    <div class="tabs">
+        <button class="tab-button" onclick="fetchNews('general')">General</button>
+        <button class="tab-button" onclick="fetchNews('sports')">Sports</button>
+        <button class="tab-button" onclick="fetchNews('business')">Business</button>
+    </div>
+    <div id="news-container"></div>
+    <script>
+        async function fetchNews(topic) {
+            const response = await fetch(`/news?topic=${topic}`);
+            const data = await response.json();
+            const newsContainer = document.getElementById('news-container');
+            newsContainer.innerHTML = ''; // Clear previous content
+            data.articles.forEach(article => {
+                const articleElement = document.createElement('div');
+                articleElement.classList.add('news-article');
+                articleElement.innerHTML = `
+                    <h2>${article.title}</h2>
+                    <img src="${article.urlToImage}" alt="${article.title}" style="width:100%; height:auto;">
+                    <p>${article.description}</p>
+                    <a href="${article.url}" target="_blank">Read more</a>
+                `;
+                newsContainer.appendChild(articleElement);
+            });
+        }
+
+        // Fetch general news by default
+        fetchNews('general');
+    </script>
+</body>
+</html>
+
