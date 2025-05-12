@@ -1,76 +1,119 @@
+/* Style for the entire body of the webpage */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;       /* Set the default font */
+    margin: 0;                            /* Remove default margin */
+    padding: 0;                           /* Remove default padding */
+    background-color: #f4f4f4;            /* Light gray background color */
 }
 
+/* Style for the main heading (h1) */
 h1 {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
+    text-align: center;                   /* Center the text */
+    padding: 20px;                        /* Add space inside the heading */
+    background-color: #333;               /* Dark gray background */
+    color: #fff;                          /* White text color */
 }
 
+/* Container for the tab buttons */
 .tabs {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+    display: flex;                        /* Arrange buttons in a row */
+    justify-content: center;             /* Center the buttons horizontally */
+    margin: 20px 0;                       /* Add vertical spacing */
 }
 
+/* Style for each tab button */
 .tab-button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1em;
+    background-color: #333;              /* Dark gray background */
+    color: #fff;                          /* White text */
+    border: none;                         /* Remove default border */
+    padding: 10px 20px;                   /* Add padding inside the button */
+    margin: 0 5px;                        /* Space between buttons */
+    cursor: pointer;                      /* Show pointer cursor on hover */
+    border-radius: 5px;                   /* Rounded corners */
+    font-size: 1em;                       /* Set font size */
 }
 
+/* Hover effect for tab buttons */
 .tab-button:hover {
-    background-color: #555;
+    background-color: #555;              /* Slightly lighter background on hover */
 }
 
+/* Container for all news articles */
 #news-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    display: flex;                        /* Use Flexbox layout */
+    flex-direction: column;              /* Stack children vertically */
+    align-items: center;                 /* Center children horizontally */
+    padding: 20px;                        /* Padding around the container */
 }
 
+/* Style for each individual news article */
 .news-article {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 600px;
-    margin: 10px 0;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;              /* White background */
+    border: 1px solid #ddd;              /* Light gray border */
+    border-radius: 5px;                  /* Rounded corners */
+    width: 80%;                          /* Take up 80% of the parent container */
+    max-width: 600px;                    /* Limit max width for readability */
+    margin: 10px 0;                      /* Vertical spacing between articles */
+    padding: 15px;                       /* Inner spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Style for the article title */
 .news-article h2 {
-    margin: 0 0 10px;
-    font-size: 1.5em;
+    margin: 0 0 10px;                    /* Space below the heading */
+    font-size: 1.5em;                    /* Make the heading larger */
 }
 
+/* Style for images in news articles */
 .news-article img {
-    margin: 10px 0;
+    margin: 10px 0;                      /* Vertical spacing around images */
 }
 
+/* Style for the article description paragraph */
 .news-article p {
-    margin: 0 0 10px;
-    font-size: 1em;
-    color: #555;
+    margin: 0 0 10px;                    /* Space below the paragraph */
+    font-size: 1em;                      /* Standard font size */
+    color: #555;                         /* Medium gray text */
 }
 
+/* Style for the "Read more" link */
 .news-article a {
-    color: #007BFF;
-    text-decoration: none;
+    color: #007BFF;                      /* Blue link color */
+    text-decoration: none;              /* Remove underline by default */
 }
 
+/* Add underline on hover for links */
 .news-article a:hover {
-    text-decoration: underline;
+    text-decoration: underline;         /* Underline on hover for clarity */
+}
+/* Container for like and dislike buttons */
+.like-dislike-container {
+    display: flex;                        /* Arrange buttons in a row */
+    justify-content: center;              /* Center the buttons horizontally */
+    margin-top: 10px;                     /* Add spacing above the container */
+}
+
+/* Style for like and dislike buttons */
+.like-button, .dislike-button {
+    background-color: #007BFF;            /* Blue background */
+    color: #fff;                          /* White text */
+    border: none;                         /* Remove default border */
+    padding: 10px 15px;                   /* Add padding inside the button */
+    margin: 0 5px;                        /* Space between buttons */
+    cursor: pointer;                      /* Show pointer cursor on hover */
+    border-radius: 5px;                   /* Rounded corners */
+    font-size: 1em;                       /* Set font size */
+    display: flex;                        /* Use flex layout */
+    align-items: center;                  /* Center content vertically */
+    gap: 5px;                             /* Space between icon and text */
+}
+
+/* Hover effect for like and dislike buttons */
+.like-button:hover, .dislike-button:hover {
+    background-color: #0056b3;            /* Darker blue on hover */
+}
+
+/* Style for like and dislike icons */
+.like-button i, .dislike-button i {
+    font-size: 1.2em;                     /* Slightly larger icon size */
 }
